@@ -1,5 +1,5 @@
 import type { Linter as LinterType, Rule as RuleType } from 'eslint';
-import { Linter } from 'eslint/lib/linter/linter';
+import { Linter } from 'eslint';
 import * as babelParser from '@babel/eslint-parser';
 
 import { rules as reactRules } from 'eslint-plugin-react';
