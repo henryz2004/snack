@@ -50,6 +50,9 @@ const config = {
     mainFields: ['browser', 'main', 'module'],
     fallback: {
       fs: false,
+      module: require.resolve('module/'),
+      path: require.resolve('path-browserify'),
+      util: require.resolve('util/'),
     },
   },
   externals: {
