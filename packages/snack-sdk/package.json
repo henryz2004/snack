@@ -23,9 +23,9 @@
     "build": "tsc",
     "test": "yarn test:mock",
     "test:mock": "yarn run jest",
-    "test:local": "SNACK_ENV=local yarn run jest",
-    "test:staging": "SNACK_ENV=staging yarn run jest",
-    "test:prod": "SNACK_ENV=production yarn run jest",
+    "test:local": "cross-env SNACK_ENV=local yarn run jest",
+    "test:staging": "cross-env SNACK_ENV=staging yarn run jest",
+    "test:prod": "cross-env SNACK_ENV=production yarn run jest",
     "lint": "eslint .",
     "doc": "yarn typedoc",
     "doc:ci": "yarn doc && node ./scripts/checkUncommittedDocChanges.js"

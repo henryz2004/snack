@@ -40,8 +40,8 @@
     "lint": "tsc --noEmit && echo 'Only typecheck'",
     "clean": "git clean -xdf ./build",
     "dev": "webpack",
-    "build": "WEBPACK_PRODUCTION=true webpack",
-    "analyze": "WEBPACK_ANALYZE=true webpack",
+    "build": "cross-env WEBPACK_PRODUCTION=true webpack",
+    "analyze": "cross-env WEBPACK_ANALYZE=true webpack",
     "prepublishOnly": "yarn clean && yarn build",
     "bootstrap": "yarn install && yarn build"
   },

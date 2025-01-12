@@ -4,8 +4,8 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "REDIS_ENVIRONMENT=staging scripts/dev.sh",
-    "start:production": "REDIS_ENVIRONMENT=production scripts/dev.sh",
+    "start": "cross-env REDIS_ENVIRONMENT=staging scripts/dev.sh",
+    "start:production": "cross-env REDIS_ENVIRONMENT=production scripts/dev.sh",
     "build": "tsc --project tsconfig.build.json",
     "debug": "kubectl.1.15 --context=minikube port-forward deploy/snackager 9229",
     "test": "env-cmd -e test node --async-stack-traces node_modules/.bin/jest --config jest/unit.config.js",
