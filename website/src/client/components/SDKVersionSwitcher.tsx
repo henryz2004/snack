@@ -21,28 +21,29 @@ export default function SDKVersionSwitcher({
 }: Props) {
   const vers = Object.keys(versions).sort();
   const options = vers.filter((v) => versions[v as SDKVersion] || v === sdkVersion);
+  const localhost = '127.0.0.1';
   if (process.env.NODE_ENV === 'development' || isLocalWebPreview) {
-    options.push('localhost');
+    options.push(localhost);
   }
   return (
     <div className={css(styles.container)}>
       <span className={css(styles.label)}>Expo</span>
       <span className={css(styles.switcher)}>
         <select
-          value={isLocalWebPreview ? 'localhost' : sdkVersion}
+          value={isLocalWebPreview ? localhost : sdkVersion}
           onChange={(e) =>
             onChange(
-              (e.target.value === 'localhost'
+              (e.target.value === localhost
                 ? vers[vers.length - 1]
                 : e.target.value) as SDKVersion,
-              e.target.value === 'localhost'
+              e.target.value === localhost
             )
           }
           className={classnames(css(styles.select), selectClassName)}
         >
           {options.map((option) => (
             <option className={css(styles.option)} key={option} value={option}>
-              {option === 'localhost' ? option : `v${option}`}
+              {option === localhost ? option : `v${option}`}
             </option>
           ))}
         </select>
