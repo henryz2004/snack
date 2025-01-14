@@ -36,7 +36,7 @@ fi
 # Primary endpoint IPs from https://console.cloud.google.com/memorystore/redis/locations/us-central1/instances/
 case "$environment" in
   staging)
-    snackager_cache_memorystore_ip="10.81.199.227"
+    snackager_cache_memorystore_ip="10.128.0.12" # henry's ip
     ;;
   production)
     snackager_cache_memorystore_ip="10.241.107.196"
